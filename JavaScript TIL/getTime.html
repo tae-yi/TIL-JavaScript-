@@ -1,0 +1,16 @@
+<script>
+
+let today = new Date(2023, 4, 01); // 오늘날짜
+let jjangooStart = new Date(2019, 7, 1); // 입사일
+
+function workDayCalc(startDate) {
+    let timeDiff = today.getTime() - startDate.getTime(); // 오늘 날짜와 입사일의 차이를 변수timeDiff에 담음
+    let dayDiff = timeDiff / 1000 / 60 / 60 / 24; //타임스탬프의 값이 밀리초이기 때문에 일수로 바꿔줌
+    /* 1000밀리초가 1초니깐, 일단 초단위로 바꾸려면 1000으로 나눠줌
+     그리고 60초가 1분, 60분이 1시간, 그리고 24시간이 하루가 되니깐 다음과 같이 작성하면 타임스탬프 값을 하루 단위로 계산할 수 있음*/
+
+    console.log(`오늘은 입사한 지 ${dayDiff + 1}일째 되는 날입니다.`);
+}
+
+workDayCalc(jjangooStart);
+</script>
